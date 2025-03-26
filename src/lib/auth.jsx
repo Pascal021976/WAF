@@ -11,7 +11,10 @@ export const isAuthenticated = () => {
 export const login = (email, password) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
+      console.log("Tentative de connexion avec:", email);
+      console.log("Utilisateurs disponibles:", users);
       const user = users.find(u => u.email === email && u.password === password);
+      console.log("Utilisateur trouvé:", user);
       
       if (user) {
         // Ne pas stocker le mot de passe dans le localStorage
@@ -25,6 +28,7 @@ export const login = (email, password) => {
     }, 500);
   });
 };
+
 
 // Inscription
 export const register = (userData) => {
